@@ -1,0 +1,308 @@
+﻿aggregates:
+  AptosFormsDemo2StartPage:
+    name: AptosFormsDemo2StartPage
+    id:
+      generator:
+        class: signer
+      conceptual: true
+      name: SignerAddress
+      type: address
+      sequenceNumber: -1
+    properties:
+      Fr_jq19:
+        name: Fr_jq19
+        optional: false
+        length: 255
+        type: String
+      Fr_3c5z:
+        name: Fr_3c5z
+        optional: false
+        type: u128
+        sequenceNumber: 1
+      Fr_d1h2:
+        name: Fr_d1h2
+        displayName: 下拉单选
+        optional: false
+        length: 1
+        type: AptosFormsDemo2_fr_d1h2
+        sequenceNumber: 2
+      Fr_7gbq:
+        name: Fr_7gbq
+        displayName: 下拉多选
+        optional: false
+        itemLength: 1
+        size:
+          max: 2
+        itemType: AptosFormsDemo2_fr_7gbq
+        sequenceNumber: 3
+      Fr_h4t4:
+        name: Fr_h4t4
+        displayName: 点击单选
+        optional: false
+        length: 1
+        type: AptosFormsDemo2_fr_h4t4
+        sequenceNumber: 4
+      Fr_5jh4:
+        name: Fr_5jh4
+        displayName: 点击多选
+        optional: false
+        itemLength: 1
+        size:
+          max: 3
+        itemType: AptosFormsDemo2_fr_5jh4
+        sequenceNumber: 5
+      Fr_bzpt:
+        name: Fr_bzpt
+        optional: false
+        length: 255
+        type: String
+        sequenceNumber: 6
+      Fr_1kci:
+        name: Fr_1kci
+        optional: false
+        type: bool
+        sequenceNumber: 7
+      Fr_9i6h:
+        name: Fr_9i6h
+        optional: false
+        type: bool
+        sequenceNumber: 8
+      Fr_jyqo:
+        name: Fr_jyqo
+        optional: false
+        type: u128
+        sequenceNumber: 9
+      Fr_3eds:
+        name: Fr_3eds
+        optional: false
+        type: u128
+        sequenceNumber: 10
+      Fr_e62y:
+        name: Fr_e62y
+        optional: false
+        length: 255
+        type: XRenderFormDate
+        sequenceNumber: 11
+      Fr_vki:
+        name: Fr_vki
+        optional: false
+        type: XRenderFormDateRange
+        sequenceNumber: 12
+      Fr_6znw:
+        name: Fr_6znw
+        optional: false
+        length: 10
+        type: XRenderFormTime
+        sequenceNumber: 13
+      Fr_4ncu:
+        name: Fr_4ncu
+        optional: false
+        type: XRenderFormTimeRange
+        sequenceNumber: 14
+      Fr_1cbi:
+        name: Fr_1cbi
+        optional: false
+        length: 10
+        max: 10
+        type: String
+        sequenceNumber: 15
+      Fr_18bq:
+        name: Fr_18bq
+        optional: false
+        length: 9
+        type: String
+        sequenceNumber: 16
+      Fr_lb63:
+        name: Fr_lb63
+        optional: false
+        length: 200
+        type: String
+        sequenceNumber: 17
+      Fr_iyqp:
+        name: Fr_iyqp
+        optional: false
+        length: 200
+        type: String
+        sequenceNumber: 18
+      Fr_hfdf:
+        name: Fr_hfdf
+        optional: false
+        length: 50
+        type: String
+        sequenceNumber: 19
+    methods:
+      Submit:
+        name: Submit
+        metadata: {}
+        verificationLogic:
+          Move: >-
+            assert!(aptos_framework::timestamp::now_seconds() >= 1699256214, EFormNotOpen); // Open at: 2023-11-06T07:36:54Z
+                    assert!(aptos_framework::timestamp::now_seconds() <= 3908475414, EFormCutOff); // Cutoff at: 2093-11-08T07:36:54+08:00
+        event:
+          name: AptosFormsDemo2StartPageSubmitted
+        constants:
+          EFormNotOpen:
+            name: EFormNotOpen
+            constantExpression:
+              Move: 111
+            type: u64
+          EFormCutOff:
+            name: EFormCutOff
+            constantExpression:
+              Move: 112
+            type: u64
+      Update:
+        name: Update
+        metadata: {}
+        verificationLogic:
+          Move: >-
+            assert!(aptos_forms_demo2_start_page::signer_address(aptos_forms_demo2_start_page) == std::signer::address_of(account), ENoUpdatePermission);
+                    assert!(aptos_framework::timestamp::now_seconds() >= 1699256214, EFormNotOpen); // Open at: 2023-11-06T07:36:54Z
+                    assert!(aptos_framework::timestamp::now_seconds() <= 3908475414, EFormCutOff); // Cutoff at: 2093-11-08T07:36:54+08:00
+        event:
+          name: AptosFormsDemo2StartPageUpdated
+          properties: {}
+        constants:
+          EFormNotOpen:
+            name: EFormNotOpen
+            constantExpression:
+              Move: 111
+            type: u64
+          EFormCutOff:
+            name: EFormCutOff
+            constantExpression:
+              Move: 112
+            type: u64
+          ENoUpdatePermission:
+            name: ENoUpdatePermission
+            constantExpression:
+              Move: 113
+            type: u64
+          EFieldNotUpdatable:
+            name: EFieldNotUpdatable
+            constantExpression:
+              Move: 114
+            type: u64
+    metadata:
+      Preprocessors:
+      - MOVE_CRUD_IT
+      CRUD_IT_NO_DELETE: true
+      CRUD_IT_CREATE_METHOD_NAME: Submit
+      CRUD_IT_UPDATE_METHOD_NAME: Update
+enumObjects:
+  AptosFormsDemo2_fr_d1h2:
+    baseType: String
+    values:
+      A:
+        name: A
+        displayName: A
+        value: A
+        stringValue: A
+      B:
+        name: B
+        displayName: B
+        value: B
+        stringValue: B
+    name: AptosFormsDemo2_fr_d1h2
+    displayName: 下拉单选
+    metadata: {}
+  AptosFormsDemo2_fr_7gbq:
+    baseType: String
+    values:
+      A:
+        name: A
+        displayName: A
+        value: A
+        stringValue: A
+      B:
+        name: B
+        displayName: B
+        value: B
+        stringValue: B
+    name: AptosFormsDemo2_fr_7gbq
+    displayName: 下拉多选
+    metadata: {}
+  AptosFormsDemo2_fr_h4t4:
+    baseType: String
+    values:
+      A:
+        name: A
+        displayName: A
+        value: A
+        stringValue: A
+      B:
+        name: B
+        displayName: B
+        value: B
+        stringValue: B
+      C:
+        name: C
+        displayName: C
+        value: C
+        stringValue: C
+    name: AptosFormsDemo2_fr_h4t4
+    displayName: 点击单选
+    metadata: {}
+  AptosFormsDemo2_fr_5jh4:
+    baseType: String
+    values:
+      A:
+        name: A
+        displayName: A
+        value: A
+        stringValue: A
+      B:
+        name: B
+        displayName: B
+        value: B
+        stringValue: B
+      C:
+        name: C
+        displayName: C
+        value: C
+        stringValue: C
+    name: AptosFormsDemo2_fr_5jh4
+    displayName: 点击多选
+    metadata: {}
+configuration:
+  defaultUserIdType: string
+  defaultTimestampType: OffsetDateTime
+  java:
+    typeMappings:
+      OffsetDateTime: OffsetDateTime
+    typePackages:
+      OffsetDateTime: java.time
+    eventLobPropertiesEnabled: true
+    stateLobPropertiesEnabled: true
+    noGeneratingMutateStateByEventMethods: true
+  move:
+    defaultUserIdType: address
+    moduleNamePrefix: AptosFormsDemo2
+  aptos:
+    resourceAccountSeed: AptosFormsDemo2
+  sequenceNumber: 100
+  defaultStringLength: 250
+  defaultStringIdLength: 50
+  genericTypes: []
+  defaultDiscriminatorSuffix: Class
+  valueObjectBaseTypes: {}
+  sqlTypes: {}
+  metadata:
+    AlwaysGeneratingEventClobProperties: false
+    AlwaysGeneratingClobEventProperties: false
+    NO_MOVE_EVENT_MODULE: true
+  commandIdName: CommandId
+  requesterIdName: RequesterId
+  commandContextName: CommandContext
+  defaultCommandParameters:
+    CommandId:
+      name: CommandId
+      type: string
+      isCommandId: true
+      sequenceNumber: -1
+    RequesterId:
+      name: RequesterId
+      type: string
+      isRequesterId: true
+      sequenceNumber: -1
+

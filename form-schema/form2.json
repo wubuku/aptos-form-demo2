@@ -1,0 +1,199 @@
+{
+  "type": "object",
+  "properties": {
+    "fr-jq19": {
+      "title": "单行文本",
+      "type": "string",
+      "widget": "input"
+    },
+    "fr-3c5z": {
+      "title": "数字输入框",
+      "type": "number",
+      "widget": "inputNumber"
+    },
+    "fr-d1h2": {
+      "title": "下拉单选",
+      "type": "string",
+      "props": {
+        "options": [
+          {
+            "label": "A",
+            "value": "A"
+          },
+          {
+            "label": "B",
+            "value": "B"
+          }
+        ]
+      },
+      "widget": "select"
+    },
+    "fr-7gbq": {
+      "title": "下拉多选",
+      "type": "array",
+      "widget": "multiSelect",
+      "props": {
+        "options": [
+          {
+            "label": "A",
+            "value": "A"
+          },
+          {
+            "label": "B",
+            "value": "B"
+          }
+        ]
+      }
+    },
+    "fr-h4t4": {
+      "title": "点击单选",
+      "type": "string",
+      "props": {
+        "options": [
+          {
+            "label": "A",
+            "value": "A"
+          },
+          {
+            "label": "B",
+            "value": "B"
+          },
+          {
+            "label": "C",
+            "value": "C"
+          }
+        ]
+      },
+      "widget": "radio"
+    },
+    "fr-5jh4": {
+      "title": "点击多选",
+      "type": "array",
+      "props": {
+        "options": [
+          {
+            "label": "A",
+            "value": "A"
+          },
+          {
+            "label": "B",
+            "value": "B"
+          },
+          {
+            "label": "C",
+            "value": "C"
+          }
+        ],
+        "direction": "row"
+      },
+      "widget": "checkboxes"
+    },
+    "fr-bzpt": {
+      "title": "多行文本",
+      "type": "string",
+      "widget": "textArea"
+    },
+    "fr-1kci": {
+      "title": "是否选择",
+      "type": "boolean",
+      "widget": "checkbox"
+    },
+    "fr-9i6h": {
+      "title": "开关",
+      "type": "boolean",
+      "widget": "switch"
+    },
+    "fr-jyqo": {
+      "title": "评分",
+      "props": {
+        "allowClear": true,
+        "count": 5
+      },
+      "widget": "rate"
+    },
+    "fr-3eds": {
+      "title": "滑动条",
+      "maxWidth": "340px",
+      "widget": "slider"
+    },
+    "fr-e62y": {
+      "title": "日期选择",
+      "type": "string",
+      "widget": "datePicker"
+    },
+    "fr-vki": {
+      "title": "日期区间选择",
+      "type": "range",
+      "format": "date",
+      "widget": "dateRange"
+    },
+    "fr-6znw": {
+      "title": "时间选择",
+      "type": "string",
+      "format": "time",
+      "props": {
+        "placeholder": "请选择时间"
+      },
+      "widget": "timePicker"
+    },
+    "fr-4ncu": {
+      "title": "时间区间",
+      "type": "range",
+      "format": "time",
+      "widget": "timeRange"
+    },
+    "fr-1cbi": {
+      "title": "树选择",
+      "props": {
+        "treeData": [
+          {
+            "value": "parent 1",
+            "title": "parent 1",
+            "children": [
+              {
+                "value": "parent 1-0",
+                "title": "parent 1-0",
+                "children": [
+                  {
+                    "value": "leaf1",
+                    "title": "leaf1"
+                  },
+                  {
+                    "value": "leaf2",
+                    "title": "leaf2"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "placeholder": "请选择"
+      },
+      "maxWidth": "340px",
+      "widget": "treeSelect"
+    },
+    "fr-18bq": {
+      "title": "颜色选择",
+      "widget": "color"
+    },
+    "fr-lb63": {
+      "title": "图片 URL",
+      "widget": "imageInput"
+    },
+    "fr-iyqp": {
+      "title": "链接输入框",
+      "widget": "urlInput"
+    },
+    "fr-hfdf": {
+      "title": "Html",
+      "default": "<h1>Hello world</h1>",
+      "props": {
+        "placeholder": ""
+      },
+      "maxWidth": "340px",
+      "widget": "html"
+    }
+  },
+  "displayType": "row",
+  "maxWidth": "340px"
+}
