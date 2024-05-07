@@ -12,7 +12,7 @@ wubuku/dddappp-aptos:0.0.1 \
 --xRenderFormCutoffAt '2093-11-08T07:36:54+08:00' \
 --dddmlDirectoryPath /myapp/dddml \
 --boundedContextName Test.AptosFormsDemo2 \
---aptosMoveProjectDirectoryPath /myapp/aptos-contracts \
+--aptosMoveProjectDirectoryPath /myapp \
 --boundedContextAptosPackageName AptosFormsDemo2 \
 --boundedContextAptosNamedAddress aptos_forms_demo2 \
 --boundedContextJavaPackageName org.test.aptosformsdemo2 \
@@ -22,7 +22,6 @@ wubuku/dddappp-aptos:0.0.1 \
 ```
 
 ```shell
-#cd aptos-contracts
 #aptos init
 ##Choose network from [devnet, testnet, mainnet, local, custom | defaults to devnet]
 ##testnet

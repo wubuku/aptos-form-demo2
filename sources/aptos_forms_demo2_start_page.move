@@ -111,6 +111,14 @@ module aptos_forms_demo2::aptos_forms_demo2_start_page {
         aptos_forms_demo2_start_page.fr_d1h2 = fr_d1h2;
     }
 
+    public fun borrow_fr_7gbq(aptos_forms_demo2_start_page: &AptosFormsDemo2StartPage): &vector<String> {
+        &aptos_forms_demo2_start_page.fr_7gbq
+    }
+
+    public(friend) fun borrow_mut_fr_7gbq(aptos_forms_demo2_start_page: &mut AptosFormsDemo2StartPage): &mut vector<String> {
+        &mut aptos_forms_demo2_start_page.fr_7gbq
+    }
+
     public fun fr_7gbq(aptos_forms_demo2_start_page: &AptosFormsDemo2StartPage): vector<String> {
         aptos_forms_demo2_start_page.fr_7gbq
     }
@@ -128,6 +136,14 @@ module aptos_forms_demo2::aptos_forms_demo2_start_page {
         assert!(std::string::length(&fr_h4t4) <= 1, EDataTooLong);
         assert!(aptos_forms_demo2::aptos_forms_demo2_fr_h4t4::is_valid(fr_h4t4), EInvalidEnumValue);
         aptos_forms_demo2_start_page.fr_h4t4 = fr_h4t4;
+    }
+
+    public fun borrow_fr_5jh4(aptos_forms_demo2_start_page: &AptosFormsDemo2StartPage): &vector<String> {
+        &aptos_forms_demo2_start_page.fr_5jh4
+    }
+
+    public(friend) fun borrow_mut_fr_5jh4(aptos_forms_demo2_start_page: &mut AptosFormsDemo2StartPage): &mut vector<String> {
+        &mut aptos_forms_demo2_start_page.fr_5jh4
     }
 
     public fun fr_5jh4(aptos_forms_demo2_start_page: &AptosFormsDemo2StartPage): vector<String> {
