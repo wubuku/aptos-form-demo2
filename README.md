@@ -41,6 +41,22 @@ aptos move run --function-id 'default::aptos_forms_demo2_init::initialize' --ass
 
 Now we can call the `submit` function of the `aptos_forms_demo2::aptos_forms_demo2_start_page_aggregate` module to submit form data.
 
+## Docker build
+
+```shell
+cd docker
+
+docker build -t wubuku/aptos:0.0.1 -f Dockerfile-aptos .
+
+cd ..
+
+docker run -v .:/mydapp \
+wubuku/aptos:0.0.1 \
+move compile --save-metadata --skip-fetch-latest-git-deps \
+  --package-dir /mydapp \
+  --named-addresses aptos_forms_demo2=0x71df3ab1b6cf015aa5870a8a6e8ee0951c54e8d7d79bb59fa3b737c3a38fb93b,xrender_form_utils=0x71df3ab1b6cf015aa5870a8a6e8ee0951c54e8d7d79bb59fa3b737c3a38fb93b
+```
+
 ## Tips
 
 We published this form contract on [testnet](https://explorer.aptoslabs.com/account/0x68758f60bd7f2acc7874dedc7fae3bc9a861ba1dfd1c5f53113808af6ff02eb5/modules/code/aptos_forms_demo2_start_page_aggregate?network=testnet)
