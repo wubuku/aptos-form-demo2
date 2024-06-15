@@ -14,6 +14,9 @@ rm -rf /var/lib/apt/lists/*
 ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ENV PATH="$JAVA_HOME/bin:${PATH}"
 
+WORKDIR /opt/dddappp
+RUN git clone https://github.com/dddappp/XRender-Form-Utils.git
+
 WORKDIR /opt/aptos
 
 ADD https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v3.4.1/aptos-cli-3.4.1-Ubuntu-22.04-x86_64.zip /opt/aptos/
@@ -22,5 +25,7 @@ RUN unzip aptos-cli-3.4.1-Ubuntu-22.04-x86_64.zip && \
 rm aptos-cli-3.4.1-Ubuntu-22.04-x86_64.zip
 
 RUN chmod +x aptos
+
+RUN ./aptos move compile --save-metadata --package-dir /opt/dddappp/XRender-Form-Utils/aptos-move --named-addresses xrender_form_utils=0x71df3ab1b6cf015aa5870a8a6e8ee0951c54e8d7d79bb59fa3b737c3a38fb93b --skip-fetch-latest-git-deps
 
 ENTRYPOINT ["/opt/aptos/aptos"]
