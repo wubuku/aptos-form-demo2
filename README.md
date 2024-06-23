@@ -3,13 +3,14 @@
 ```shell
 docker run \
 -v .:/myapp \
-wubuku/dddappp-aptos:0.0.1 \
+wubuku/dddappp-aptos:master \
 --xRenderFormSchema /myapp/form-schema/form2.json \
 --xRenderFormId AptosFormsDemo2 \
 --xRenderFormStartPageName StartPage \
 --xRenderFormUpdatable \
 --xRenderFormOpenAt '2023-11-06T07:36:54Z' \
 --xRenderFormCutoffAt '2093-11-08T07:36:54+08:00' \
+--noAptosTokenObjects \
 --dddmlDirectoryPath /myapp/dddml \
 --boundedContextName Test.AptosFormsDemo2 \
 --aptosMoveProjectDirectoryPath /myapp \
