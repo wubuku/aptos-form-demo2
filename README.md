@@ -42,6 +42,14 @@ aptos move run --function-id 'default::aptos_forms_demo2_init::initialize' --ass
 
 Now we can call the `submit` function of the `aptos_forms_demo2::aptos_forms_demo2_start_page_aggregate` module to submit form data.
 
+```shell
+aptos move run --function-id 'default::aptos_forms_demo2_start_page_aggregate::submit' \
+--args 'string:fr_jq19' u128:1 'string:A' 'string:["A","B"]' 'string:A' 'string:["A","B"]' 'string:fr_bzpt' \
+  bool:true bool:false u128:1 u128:1 'u16:[2024,1,1]' 'u16:[2024,1,1,2024,7,1]' \
+  'u8:[1,1,1]' 'u8:[1,1,1,2,2,2]' 'string:fr_1cbi' 'string:fr_18bq' 'string:fr_lb63' 'string:fr_iyqp' 'string:fr_hfdf' \
+--assume-yes
+```
+
 ## Docker build
 
 ```shell
