@@ -1,5 +1,7 @@
 # README
 
+## Create form contract
+
 ```shell
 docker run \
 -v .:/myapp \
@@ -21,6 +23,8 @@ wubuku/dddappp-aptos:master \
 --javaProjectNamePrefix aptosformsdemo2 \
 --pomGroupId test.aptosformsdemo2
 ```
+
+## Publish form contract
 
 ```shell
 #aptos init
@@ -50,20 +54,27 @@ aptos move run --function-id 'default::aptos_forms_demo2_start_page_aggregate::s
 --assume-yes
 ```
 
-## Docker build
+
+## Docker things
+
+Build a docker image that includes the Aptos CLI:
 
 ```shell
 cd docker
 
 docker build -t wubuku/aptos:0.0.1 -f Dockerfile-aptos .
+```
 
+Use this image to compile a Move project:
+
+```shell
 cd ..
 
 docker run -v .:/mydapp \
 wubuku/aptos:0.0.1 \
 move compile --save-metadata --skip-fetch-latest-git-deps \
   --package-dir /mydapp \
-  --named-addresses aptos_forms_demo2=0x71df3ab1b6cf015aa5870a8a6e8ee0951c54e8d7d79bb59fa3b737c3a38fb93b,xrender_form_utils=0x71df3ab1b6cf015aa5870a8a6e8ee0951c54e8d7d79bb59fa3b737c3a38fb93b
+  --named-addresses aptos_forms_demo2=0x68758f60bd7f2acc7874dedc7fae3bc9a861ba1dfd1c5f53113808af6ff02eb5,xrender_form_utils=0x71df3ab1b6cf015aa5870a8a6e8ee0951c54e8d7d79bb59fa3b737c3a38fb93b
 ```
 
 ## Tips
