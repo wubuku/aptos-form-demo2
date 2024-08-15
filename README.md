@@ -57,7 +57,7 @@ aptos move run --function-id 'default::aptos_forms_demo2_start_page_aggregate::s
 
 ## Docker things
 
-Build a docker image that includes the Aptos CLI:
+Build a docker image that includes the Aptos CLI & JDK:
 
 ```shell
 cd docker
