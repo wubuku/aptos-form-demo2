@@ -15,10 +15,10 @@ ENV PATH="$JAVA_HOME/bin:${PATH}"
 
 WORKDIR /opt/aptos
 
-ADD https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v4.0.0/aptos-cli-4.0.0-Ubuntu-22.04-x86_64.zip /opt/aptos/
+ADD https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v4.4.0/aptos-cli-4.4.0-Ubuntu-22.04-x86_64.zip /opt/aptos/
 
-RUN unzip aptos-cli-4.0.0-Ubuntu-22.04-x86_64.zip && \
-rm aptos-cli-4.0.0-Ubuntu-22.04-x86_64.zip
+RUN unzip aptos-cli-4.4.0-Ubuntu-22.04-x86_64.zip && \
+rm aptos-cli-4.4.0-Ubuntu-22.04-x86_64.zip
 
 RUN chmod +x aptos
 
